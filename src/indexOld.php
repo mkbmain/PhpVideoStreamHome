@@ -18,8 +18,7 @@ parse_str($_SERVER['QUERY_STRING'], $output);
 if(array_key_exists("video", $output))
 {
 $movie = 'movies/'.$output["video"];
- echo '<video width="320" height="240" controls><source src="'.$movie.'" type="video/mp4"></video> ';
-
+echo    str_replace("_VIDEONAME_",$movie,file_get_contents("./basicVideo.txt") );
 
 }
 else
